@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <title>Pascals hemsida</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Grundstil */
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: radial-gradient(circle at top, #1b1b3a, #050509);
+            color: #fdfdfd;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* Navigationsmeny */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(5, 5, 9, 0.95);
+            border-bottom: 2px solid #ffcc00;
+        }
+
+        .nav-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 15px;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: #ffcc00;
+            text-transform: uppercase;
+        }
+
+        nav a {
+            margin-left: 15px;
+            font-weight: 600;
+            padding: 6px 10px;
+            border-radius: 20px;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        nav a:hover {
+            background: #ffcc00;
+            color: #050509;
+        }
+
+        /* Sektioner */
+        main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px 15px 40px 15px;
+        }
+
+        section {
+            padding: 40px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        h1, h2 {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #ffcc00;
+        }
+
+        p {
+            line-height: 1.6;
+            max-width: 700px;
+        }
+
+        /* Hero/startsida */
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .hero-text {
+            flex: 1 1 260px;
+        }
+
+        .hero-highlight {
+            color: #ffcc00;
+            font-weight: bold;
+        }
+
+        .hero-image {
+            flex: 1 1 260px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            border: 3px solid #ffcc00;
+            box-shadow: 0 0 20px rgba(255, 204, 0, 0.5);
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 18px;
+            border-radius: 25px;
+            border: 2px solid #ffcc00;
+            color: #050509;
+            background: #ffcc00;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s, transform 0.1s;
+        }
+
+        .btn:hover {
+            background: #050509;
+            color: #ffcc00;
+            transform: translateY(-1px);
+        }
+
+        /* Kort med shower */
+        .show-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .show-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .show-card h3 {
+            margin-top: 0;
+            color: #ffcc00;
+        }
+
+        /* Kontaktlista */
+        .contact-box {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 15px;
+            max-width: 400px;
+        }
+
+        .contact-row {
+            margin-bottom: 8px;
+        }
+
+        .label {
+            font-weight: bold;
+            color: #ffcc00;
+        }
+
+        /* Responsiv anpassning */
+        @media (max-width: 600px) {
+            .nav-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav {
+                margin-top: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigationsmeny -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">Pascals Dansshow</div>
+            <nav>
+                <a href="#start">Start</a>
+                <a href="#shower">Shower</a>
+                <a href="#galleri">Galleri</a>
+                <a href="#kontakt">Kontakt</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- START / HERO -->
+        <section id="start">
+            <div class="hero">
+                <div class="hero-text">
+                    <h1>Välkommen till Pascals dansvärld</h1>
+                    <p>
+                        Här samlar vi <span class="hero-highlight">dans, musik och shower</span> 
+                        som Pascal älskar. Klicka dig vidare till showerna, se bilder 
+                        från scenen och hitta information om kommande uppträdanden.
+                    </p>
+                    <button class="btn" onclick="document.getElementById('shower').scrollIntoView({behavior: 'smooth'})">
+                        Se showerna
+                    </button>
+                </div>
+                <div class="hero-image">
+                    <!-- DANSBILD -->
+                    <!-- Du kan byta ut src-länken mot en egen bild (lokal fil eller annan URL) -->
+                    <img src="https://images.pexels.com/photos/894156/pexels-photo-894156.jpeg"
+                         alt="Dansare på scen med färgglada lampor">
+                </div>
+            </div>
+        </section>
+
+        <!-- SHOWER -->
+        <section id="shower">
+            <h2>Pascals shower</h2>
+            <p>
+                Här är några fantasifulla shower inspirerade av dans, ljus och musik. 
+                Varje show kan få ett eget tema, kostym och musikstil.
+            </p>
+
+            <div class="show-grid">
+                <div class="show-card">
+                    <h3>Stjärnljus-showen</h3>
+                    <p>
+                        En dansshow med blinkande stjärnor, glitter och snabba steg. 
+                        Perfekt för kvällar då hela familjen vill se Pascal på “scen”.
+                    </p>
+                </div>
+                <div class="show-card">
+                    <h3>Regnbågs-dansen</h3>
+                    <p>
+                        Färgglada lampor och musik där alla färger får en egen rörelse. 
+                        Varje färg kan vara en känsla eller ett steg.
+                    </p>
+                </div>
+                <div class="show-card">
+                    <h3>Superhjälte-rutinen</h3>
+                    <p>
+                        En show där Pascal får vara superhjälte, med kraftfulla poser, hopp 
+                        och “rädda världen”-steg till peppig musik.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- GALLERI -->
+        <section id="galleri">
+            <h2>Galleri</h2>
+            <p>
+                Här kan du lägga in fler bilder på Pascal när han dansar eller står på “scen”. 
+                Just nu visas samma dansbild som på startsidan, men du kan byta ut eller lägga till fler.
+            </p>
+            <div class="hero-image" style="margin-top: 20px;">
+                <img src="https://images.pexels.com/photos/894156/pexels-photo-894156.jpeg"
+                     alt="Dansare på scen med färgglada lampor">
+            </div>
+        </section>
+
+        <!-- KONTAKT -->
+        <section id="kontakt">
+            <h2>Kontakt</h2>
+            <p>
+                Här kan du lägga in kontaktuppgifter eller bara skriva ett litet meddelande till Pascal.
+            </p>
+            <div class="contact-box">
+                <div class="contact-row">
+                    <span class="label">Namn:</span> Pascal
+                </div>
+                <div class="contact-row">
+                    <span class="label">Favoritstil:</span> Dans & shower
+                </div>
+                <div class="contact-row">
+                    <span class="label">Meddelande:</span> “Fortsätt dansa och ha roligt!”
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Här kan du lägga till mer JavaScript senare om du vill
+        // till exempel små animationer, ljuseffekter etc.
+    </script>
+</body>
+</html>
