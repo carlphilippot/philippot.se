@@ -3,89 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Välkommen</title>
+    <title>Skolplattform</title>
     <style>
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f5f7fa;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        .container {
-            background: white;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-            width: 350px;
-            text-align: center;
-        }
-
-        h1 {
-            margin-bottom: 20px;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #f4f6f8;
             color: #2c3e50;
         }
 
-        select, button {
-            width: 100%;
-            padding: 12px;
-            margin-top: 12px;
-            border-radius: 6px;
-            border: 1px solid #ccc;
-            font-size: 16px;
+        /* Top navigation */
+        .navbar {
+            background: white;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
         }
 
-        button {
-            background: #1e88e5;
-            color: white;
-            border: none;
-            cursor: pointer;
+        .navbar h1 {
+            margin: 0;
+            font-size: 22px;
+            font-weight: 600;
         }
 
-        button:hover {
-            background: #1565c0;
+        .navbar a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #1e88e5;
+            font-weight: 500;
         }
 
-        .login-options {
-            margin-top: 20px;
-            text-align: left;
+        /* Main content */
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
         }
 
-        .login-options button {
-            background: #eee;
-            color: #333;
-        }
-
-        .login-options button:hover {
-            background: #ddd;
-        }
-    </style>
-</head>
-<body>
-
-<div class="container">
-    <h1>Välkommen</h1>
-
-    <label for="org">Välj organisation:</label>
-    <select id="org">
-        <option>— Välj organisation —</option>
-        <option>Stockholms stad</option>
-        <option>Göteborgs stad</option>
-        <option>Uppsala kommun</option>
-    </select>
-
-    <button>Fortsätt</button>
-
-    <div class="login-options">
-        <p>eller logga in med:</p>
-        <button>BankID</button>
-        <button>Freja eID</button>
-        <button>Vklass‑inloggning</button>
-    </div>
-</div>
-
-</body>
-</html>
